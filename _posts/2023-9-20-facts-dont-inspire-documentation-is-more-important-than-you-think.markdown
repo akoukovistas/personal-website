@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "Facts don't inspire. Why your documentation is more important than you might think."
+date:   2023-09-20
+categories: Documentation DevEx
+---
+
+There is a very disturbing trend that can be observed in the industry. Many companies, calling upon the most unholy entity of modern product development, Agile, ignore any documentation in favor of more “production.” Those companies are wrong, and while we’re at it, they are doing Agile wrong, but that’s a different subject.
+
+Documentation is often dismissed as busywork, toil, an afterthought, something that cannot be maintained, and so on. People need to realize that documentation is an integral part of your product, and it is much more than some HTML pages you forget to update every time a new version is out. Also, no, an auto-generated swagger file is not sufficient documentation by any means.
+
+While this is not strictly limited to APIs, this post, part of my “Your API doesn’t have to suck” series, will present and focus on some points that might be more relevant to APIs than other products. Let’s start by looking at some things your documentation does for you:
+
+1. **First and foremost, it is a standard you are building against and/or on top of.** Your architects can refer to it when designing product additions, something your developers can follow while implementing new features, and something your customers can use to build their integrations.
+2. **It is part of your product’s marketing.** It’s not just about optimizing your product’s landing pages, good documentation can bring traffic to your website and product. Just imagine it has all those juicy keywords. Many very relevant and technical people will be Googling terms relevant to it, and they are likely to be part of your install base.
+3. **It is a recruitment tool.** I was approached once after a talk, and I was asked: “What does your company actually do? I searched for it but couldn’t find anything besides marketing pages.” Documentation is one of those points where you can hint at potential recruits, what your product does, how it performs, and how your engineering teams work without exposing any internal processes and code to them. How you design and present things speaks volumes.
+4. **It is a trust signal.** If your objective is to present yourself as a market leader with the best products/solutions and not simply trying to convince C-level staff and investors, this is how you do it. It is not coincidental that many engineers will use Stripe, Google, Microsoft, etc., as references when building their software.
+5. **It is a source of inspiration.** You can show someone, or make them think, what they can achieve by using or working on your products and services.
+6. **It is an outlet to upskill your engineers and give them an outlet to express themselves.** It is common within the industry for all engineering work to be behind multiple NDAs, IP protection laws, and other confidentiality agreements. Your engineers have nothing to show for themselves to other people, not just in terms of future employers but also to their peers. Imagine working on cool things all day and having no way to “show and tell” to your friends. In addition, it’s a good way for engineers to find their voice and start producing content.
+
+“Amazing!” I hear you say, “I am sold and off to put a swagger page up!” And to that, I say, “Wait, please listen.” Before you head off and start producing random documentation with ChatGPT, let’s briefly talk about what documentation is and how you need to use different kinds of documentation depending on your objective.
+
+**Facts don’t inspire.** They tell you exactly how something works, no more, no less. It is a solid, albeit boring, representation of a situation. To inspire, you need a story. Stories inspire; facts don’t. This would be correct for 99% of the situations, but developers must make it difficult for us. Developers are special beasts inspired by facts and can be left completely disinterested in stories.
+
+If you think about what a developer does daily, it boils down to two things: being in endless meetings that could have been emails and problem-solving. Thanks to this, developers are used to hearing stories about visions, long-term objectives, and “sky is the limit” thinking. They are also very used to poking holes in those stories and grounding them into reality, and then creating solutions out of that reality. As such, if you approached your developer-facing documentation with a very inspirational tone and no substance, you’re more likely than not to be ridiculed unless you’re Elon Musk. In which case, you would be ridiculed anyway, but perhaps more convincingly.
+
+When addressing developers, you need correct, current, factual information as much as you need a surrounding story to tell. It is important to enable a journey of discovery and a sense of ownership that a developer can feel by implementing a solution working with your software. You need to inspire them just enough, show them things they can achieve, equip them with a reference manual, and send them on their journey of dealing with a lot of the “junk” themselves.
+
+In case it wasn't made apparent by these cleverly crafted phrases, we could categorize documentation into factual and inspirational. There are types of documentation that can exist in either or both, but by being conscious of your target audience and the desired effects, you can pick and choose the right materials to produce. I will go briefly over each category and present a few documentation types that fall within it. Still, if you want to read more about documentation authoring and the different kinds, I highly recommend visiting [Diataxis](https://diataxis.fr/).
+
+### Inspirational:
+
+1. **Quickstart guides.** The focus is to quickly and effectively onboard someone to a system. In the case of an API product, this can mean guiding someone through authentication and making their first successful API call as quickly as possible. It does not have to cover multiple aspects of the system or be very detailed.
+2. **How-Tos.** How-to guides can be an extension to your Quickstart guides. They are task-focused, which means they don’t need to delve deeply into a subject. They just need to communicate straightforwardly how to accomplish something. In the API example, your quickstart might be authentication + first API call, while a How-To can be, after finishing the quickstart, how to use specific routes of the system.
+3. **Tutorials.** These are more in-depth than Quickstart or How-to; their goal is to make a user deeply understand your system. Tutorials can contain multiple aspects of your system working together. Using multiple services and functions to achieve a result, present the logic and the limitations behind each decision, link deeper into the documentation so a reader can focus on different aspects, and so on. A Tutorial could be something like “How to integrate X product into your build pipelines.”
+4. **Tooling.** While you could easily think of Tooling as factual since it’s literally how the application works, and to be fair, it wouldn’t be incorrect to put it under factual as well. Tooling is special. This type of documentation allows you not to care about many of the entry-level barriers and having to write custom code before using a system. If you have an SDK handling authentication or the API calls, that’s something that the user doesn’t have to care about or understand, and they can focus on their solution and how your product exists within their system.
+
+### Factual:
+
+1. **API explorers.** This is probably the most common type of API documentation in the wild. An OpenAPI JSON rendered by Swagger UI, Redoc, Stoplight, and other tools, a Postman collection, and so on. It represents your API routes, requests, and responses, and it allows a user to perform calls against the API immediately without using any other programs or the need to write code. You should not rely on this to present deep explanations of all the routes, variables, and objects. Some basic information and your models are often more than enough.
+2. **API reference.** Unlike the explorers, this does not require any functionality for a user to perform calls against the API. It’s fine if it does as a secondary function. However, this is a comprehensive reference of your models, routes, field values, intricacies, and idiosyncrasies. It should contain a reference to all error codes, possible values, and behaviors, and explanations about what each value or field represents.
+3. **Contract tests.** I am including these, partly due to the oddity of “testing as documentation” and partly due to the massive positive impact on an integrator’s life. API contract tests essentially showcase the “normal” operation of an API, and when it eventually encounters an error, an integrator (or even the API developer) can use that as a source of truth to determine if it’s the API itself that’s broken. In addition, an integrator can use the contract tests to build against the spec without having access or affecting the API while developing.
+4. **Mock data.** This can take many forms, from simulated API calls, mock servers, and data generated by a mock data tool to an honest and unassuming database dump. Mock data can allow a user to determine how the system works quickly, enable a fast setup if provided as part of a Quickstart guide, and even perpetually exist on your WordPress site because nobody bothered to delete the Hello World! post.
+
+Here’s a non-exhaustive list of some practical, real-world examples of what kinds of documentation you could be providing:
+
+- A new SaaS product: Authentication quickstart, API reference, and How-Tos on a few basic operations.
+- A payment provider: A tutorial on integrating with the payment provider, mock data, how to switch from the sandbox to the production mode, how to make dummy transactions, and API reference.
+- A CMS: Quickstart guide on setting it up on a new server, authoring tutorial, how to create taxonomies, how to make API calls and retrieve data, and the API reference.
+- An e-commerce platform: A tutorial on how to set up the store, how to add a new delivery type, how to add a digital product, how to manage customers, how to set up a new payment provider, how to retrieve product data from the API, the API reference, a tutorial on syncing the stock between systems.
+- A new framework: A quickstart guide, an example application, how to use the SDK, a nice article about what the framework does well, and some practical examples.
+
+I hope, at this stage, you have come to appreciate that documentation is not some throwaway toil task reserved only for the most junior (or naughty) of developers. Documentation is interesting and multi-faceted, enabling your organization to do much more with your products and services. It can also keep developers happy if done in the right way.
+
+**What’s the right way?** I don’t know! The right way to produce documentation varies from organization to organization, as the people, the products, and the already established processes can vary heavily. However, if you smash the like button and come back next week, I’ll prepare an article for you, going over my challenges of introducing a paradigm shift in a large and very diverse organization, along with what worked and what really didn’t.
+
+Thanks for reading, and as always, I look forward to your comments and feedback!
