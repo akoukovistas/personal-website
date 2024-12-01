@@ -1,0 +1,49 @@
+/*Sidebar Styles*/
+#sidebar {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  position: relative;
+  border-right: 1px solid #ccc;
+}
+
+#sidebar-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#sidebar-header-content-avatar img {
+  max-width: 100%;
+  border-radius: 50%;
+  background-color: #ccc;
+  box-shadow: darkgray 0 0 5px 5px;
+}
+
+#sidebar-header-content-name {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#sidebar-header-content-name p {
+  margin: 0;
+}
+
+#sidebar-content {
+  padding: 1rem;
+}
+#sidebar-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+#sidebar-footer-content .potato-image img{
+  max-width: 100%;
+}
