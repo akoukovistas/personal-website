@@ -2,6 +2,7 @@
 layout: page
 title: Mentoring & Coaching
 menu_title: Mentoring
+permalink: /mentoring
 ---
 
 My process:

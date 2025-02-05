@@ -2,6 +2,7 @@
 layout: page
 title: Technical Program Management Services
 menu_title: Program Management
+permalink: /program-management
 ---
 
 What I offer:

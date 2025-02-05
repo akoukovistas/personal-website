@@ -2,6 +2,7 @@
 layout: page
 title: Contact Me
 menu_title: Contact
+permalink: /contact-me
 ---
 
 ## Work with me ##

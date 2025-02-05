@@ -2,6 +2,7 @@
 layout: page
 title: Development Services
 menu_title: Development
+permalink: /development
 ---
 
 Technologies I work with:
