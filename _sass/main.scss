@@ -8,3 +8,33 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+footer {
+  h2 {
+    display: none;
+  }
+}
+
+.site-footer {
+  padding: 10px 0;
+
+  .contact-list {
+    display:none;
+  }
+
+  .footer-col {
+    margin: 0;
+    
+    p{
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .site-footer {
+    p{
+      display: none;
+    }
+  }
+}
