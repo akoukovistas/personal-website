@@ -3,6 +3,7 @@ layout: page
 title: Technical Program Management Services
 menu_title: Program Management
 permalink: /program-management
+hidden_on_menu: true
 ---
 
 What I offer:

@@ -3,6 +3,7 @@ layout: page
 title: Development Services
 menu_title: Development
 permalink: /development
+hidden_on_menu: true
 ---
 
 Technologies I work with:

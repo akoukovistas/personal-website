@@ -3,6 +3,7 @@ layout: page
 title: Mentoring & Coaching
 menu_title: Mentoring
 permalink: /mentoring
+hidden_on_menu: true
 ---
 
 My process:
