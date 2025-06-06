@@ -28,6 +28,12 @@ main {
 header {
   grid-row: 1; /* Header at the top */
   grid-column: 2; /* Header aligned with the main content */
+
+  &.site-header{
+      border-top: 0;
+  }
+
+
 }
 
 /* Footer */
