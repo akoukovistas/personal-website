@@ -25,5 +25,12 @@
     <meta property="og:image" content="{{ page.image | absolute_url }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+    {% else %}
+    <meta property="og:image" content="{{ '/assets/images/alexandros-koukovistas-profile.jpg' | absolute_url }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="{{ '/assets/images/alexandros-koukovistas-profile.jpg' | absolute_url }}">
     {% endif %}
+
+
+    
 </head>

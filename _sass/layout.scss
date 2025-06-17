@@ -3,14 +3,13 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 300px 1fr; /* Fixed sidebar (300px) + Flexible content */
-  grid-template-rows: auto 1fr auto; /* Header, Content, Footer */
-  height: 100vh; /* Full height of the viewport */
-  overflow: hidden; /* Prevent extra body scrolling */
+  height: auto; /* Allow the body height to grow dynamically */
+  min-height: 100vh; /* Ensure the layout covers the viewport height */
 }
 
 /* Sidebar */
 #sidebar {
-  grid-row: 1 / span 3; /* Spans the full height of the page */
+  grid-row: 1 / span 2; /* Spans the header and content */
   grid-column: 1; /* Fixed in the first column */
   overflow-y: auto; /* Scroll independently if content overflows */
   padding: 0;
@@ -29,17 +28,16 @@ header {
   grid-row: 1; /* Header at the top */
   grid-column: 2; /* Header aligned with the main content */
 
-  &.site-header{
-      border-top: 0;
+  &.site-header {
+    border-top: 0;
   }
-
-
 }
 
 /* Footer */
 footer {
-  grid-row: 3; /* Footer at the bottom */
+  grid-row: 3; /* Footer after the content */
   grid-column: 2; /* Footer aligned with the main content */
+  margin-top: auto; /* Push the footer down if there's extra space */
 }
 
 /* Wrapper adjustments */
@@ -63,6 +61,6 @@ footer {
   }
 
   #sidebar {
-    display:none;
+    display: none;
   }
 }
