@@ -33,25 +33,25 @@ With clearly defined versions, it's way easier to create proper deprecation stra
 
 Since I'm not advocating for "1984 software versions edition", or extreme bureaucracy, let me clarify some points while going over common pitfalls. In no specific order:
 
-### Your API version does not have to match your product version.
+### 1. Your API version does not have to match your product version.
 
 I can hear you all screaming at me "THERE'S NO PRODUCT WITHOUT A VERSION", and I would agree, that's mostly true. However, a product can often be a combination of different services, APIs, visual interfaces, etc working together. There's no point in syncing your SDK, REST API, portal and UI versions. I'm sure there's edge cases, where everything needs to sync, but what benefit do you get out of bumping your API version just because you deployed a new UI component?
 
 You can reasonably have v5.0.0 of your web application, v3.0.0 of your iOS app, v3.0.5 for Android, all using the v2.1.51 of your REST API, a GraphQL API which is on version 1.15.0 and offering an SDK for integrators which is currently on version 4.1.15.
 
-### Your versions have to mean something.
+### 2. Your versions have to mean something.
 
 There's a few good standards on versioning, [pick one](https://semver.org/) and follow it. Have rules for it. I have been in too many repositories where the versions were tagged something like `initial_version`, `v1_staging`, `1.1.5`, `2.1.5`, `test_for_george`. Keep it consistent and meaningful, define what your notation means.
 
-### Major version changes should only happen when major and(or) breaking changes get introduced.
+### 3. Major version changes should only happen when major and(or) breaking changes get introduced.
 
 As mentioned above, your versions have to mean something. Your actual strategy can vary, but for the love of Terry A Davis, don't go from `v.2.1.0` to `v.3.0.0` just because you added an extra route to your API... 
 
-### You don't have to support every version you release until the end of time.
+### 4. You don't have to support every version you release until the end of time.
 
 Just because you're having clearly defined versions, it doesn't mean they all need to exist and be supported. You might have some crossover where an older and newer version of an API might exist at the same time (usually due to your deprecation strategy), but don't make it a perpetual thing unless there's a reason. It's completely fine to say that versions will only be supported for 3 years.
 
-### Deprecating a version is a significant event. People need to know well in advance.
+### 5. Deprecating a version is a significant event. People need to know well in advance.
 
 In an ideal world, someone integrates with your product then forgets about it, aside from the odd minor version update, or other small piece of work. If you're going to deprecate something, or introduce breaking changes, make sure you notify your users well in advance.
 
